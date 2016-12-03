@@ -4,6 +4,12 @@ namespace Iqu\HasOffersAPIClient\Models;
 
 class BaseModel
 {
+    const DEFAULT_LIMIT = 0;
+    const DEFAULT_PAGE_NUMBER = 1;
+
+    const STATUS_ACTIVE = 'active';
+    const STATUS_DELETED = 'deleted';
+
     protected $networkToken = null;
     protected $networkId = null;
 
