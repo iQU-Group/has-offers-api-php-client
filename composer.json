@@ -6,5 +6,14 @@
             "email": "karvounis.b@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Iqu\\HasOffersAPIClient\\": "src/",
+            "Iqu\\HasOffersAPIClient\\Interfaces\\": "src/interfaces",
+            "Iqu\\HasOffersAPIClient\\Models\\": "src/models"
+        }
+    }
 }
