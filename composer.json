@@ -1,0 +1,10 @@
+{
+    "name": "iqu/has-offers",
+    "authors": [
+        {
+            "name": "Evangelos Karvounis",
+            "email": "karvounis.b@gmail.com"
+        }
+    ],
+    "require": {}
+}
