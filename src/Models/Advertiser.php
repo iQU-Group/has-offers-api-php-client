@@ -34,8 +34,14 @@ class Advertiser
 
     }
 
-    public function findAll($filters = array(), $sort = array(), $limit = '', $page = 1, array $fields = array(), $contain = array())
-    {
+    public function findAll(
+        $filters = array(),
+        $sort = array(),
+        $limit = '',
+        $page = 1,
+        array $fields = array(),
+        $contain = array()
+    ) {
 
     }
 
