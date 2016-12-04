@@ -13,8 +13,9 @@
     "autoload": {
         "psr-4": {
             "Iqu\\HasOffersAPIClient\\": "src/",
-            "Iqu\\HasOffersAPIClient\\Interfaces\\": "src/interfaces",
-            "Iqu\\HasOffersAPIClient\\Models\\": "src/models"
+            "Iqu\\HasOffersAPIClient\\Interfaces\\": "src/Interfaces",
+            "Iqu\\HasOffersAPIClient\\Controllers\\": "src/Controllers",
+            "Iqu\\HasOffersAPIClient\\Models\\": "src/Models"
         }
     }
 }

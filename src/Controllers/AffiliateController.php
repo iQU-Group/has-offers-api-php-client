@@ -1,8 +1,8 @@
 <?php
 
-namespace Iqu\HasOffersAPIClient\Models;
+namespace Iqu\HasOffersAPIClient\Controllers;
 
-class Affiliate extends BaseModel
+class AffiliateController extends BaseController
 {
     public function __construct($networkToken, $networkId)
     {

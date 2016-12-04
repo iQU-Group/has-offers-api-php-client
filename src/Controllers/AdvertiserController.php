@@ -1,9 +1,14 @@
 <?php
 
-namespace Iqu\HasOffersAPIClient\Models;
+namespace Iqu\HasOffersAPIClient\Controllers;
 
-class Advertiser extends BaseModel
+class AdvertiserController extends BaseController
 {
+    public function __construct($networkToken, $networkId)
+    {
+        parent::__construct($networkToken, $networkId);
+    }
+
     public function addAccountNote($id, $note)
     {
 
