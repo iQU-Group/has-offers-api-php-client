@@ -2,7 +2,7 @@
 
 namespace Iqu\HasOffersAPIClient\Models;
 
-class Advertiser
+class Advertiser extends BaseModel
 {
     public function addAccountNote($id, $note)
     {
@@ -37,8 +37,8 @@ class Advertiser
     public function findAll(
         $filters = array(),
         $sort = array(),
-        $limit = '',
-        $page = 1,
+        $limit = self::DEFAULT_LIMIT,
+        $page = self::DEFAULT_PAGE_NUMBER,
         array $fields = array(),
         $contain = array()
     ) {
@@ -120,7 +120,7 @@ class Advertiser
 
     }
 
-    public function getSignupQuestions($status = '')
+    public function getSignupQuestions($status = self::DEFAULT_STATUS)
     {
 
     }

@@ -146,7 +146,7 @@ class Affiliate extends BaseModel
 
     }
 
-    public function getOfferHostnames($id, $status = '')
+    public function getOfferHostnames($id, $status = self::DEFAULT_STATUS)
     {
 
     }
@@ -161,7 +161,7 @@ class Affiliate extends BaseModel
 
     }
 
-    public function getOfferPixels($id, $status = '')
+    public function getOfferPixels($id, $status = self::DEFAULT_STATUS)
     {
 
     }
@@ -196,7 +196,7 @@ class Affiliate extends BaseModel
 
     }
 
-    public function getSignupQuestions($status = '')
+    public function getSignupQuestions($status = self::DEFAULT_STATUS)
     {
 
     }
@@ -226,8 +226,13 @@ class Affiliate extends BaseModel
 
     }
 
-    public function simpleSearch($filters = array(), $sort = array(), $limit = self::DEFAULT_LIMIT, $page = self::DEFAULT_PAGE_NUMBER, array $fields = array())
-    {
+    public function simpleSearch(
+        $filters = array(),
+        $sort = array(),
+        $limit = self::DEFAULT_LIMIT,
+        $page = self::DEFAULT_PAGE_NUMBER,
+        array $fields = array()
+    ) {
 
     }
 

@@ -6,6 +6,7 @@ class BaseModel
 {
     const DEFAULT_LIMIT = 0;
     const DEFAULT_PAGE_NUMBER = 1;
+    const DEFAULT_STATUS = '';
 
     const STATUS_ACTIVE = 'active';
     const STATUS_DELETED = 'deleted';
