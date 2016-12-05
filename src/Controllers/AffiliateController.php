@@ -2,6 +2,8 @@
 
 namespace Iqu\HasOffersAPIClient\Controllers;
 
+use Iqu\HasOffersAPIClient\HasOffersConstants;
+
 class AffiliateController extends BaseController
 {
     public function __construct($networkToken, $networkId)
@@ -52,8 +54,8 @@ class AffiliateController extends BaseController
     public function findAll(
         $filters = array(),
         $sort = array(),
-        $limit = self::DEFAULT_LIMIT,
-        $page = self::DEFAULT_PAGE_NUMBER,
+        $limit = HasOffersConstants::DEFAULT_LIMIT,
+        $page = HasOffersConstants::DEFAULT_PAGE_NUMBER,
         array $fields = array(),
         array $contain = array()
     ) {
@@ -68,16 +70,19 @@ class AffiliateController extends BaseController
     public function findAllFraudAlerts(
         $filters = array(),
         $sort = array(),
-        $limit = self::DEFAULT_LIMIT,
-        $page = self::DEFAULT_PAGE_NUMBER,
+        $limit = HasOffersConstants::DEFAULT_LIMIT,
+        $page = HasOffersConstants::DEFAULT_PAGE_NUMBER,
         array $fields = array(),
         array $contain = array()
     ) {
 
     }
 
-    public function findAllIds($filters = array(), $limit = self::DEFAULT_LIMIT, $page = self::DEFAULT_PAGE_NUMBER)
-    {
+    public function findAllIds(
+        $filters = array(),
+        $limit = HasOffersConstants::DEFAULT_LIMIT,
+        $page = HasOffersConstants::DEFAULT_PAGE_NUMBER
+    ) {
 
     }
 
@@ -146,7 +151,7 @@ class AffiliateController extends BaseController
 
     }
 
-    public function getOfferHostnames($id, $status = self::DEFAULT_STATUS)
+    public function getOfferHostnames($id, $status = HasOffersConstants::DEFAULT_STATUS)
     {
 
     }
@@ -161,7 +166,7 @@ class AffiliateController extends BaseController
 
     }
 
-    public function getOfferPixels($id, $status = self::DEFAULT_STATUS)
+    public function getOfferPixels($id, $status = HasOffersConstants::DEFAULT_STATUS)
     {
 
     }
@@ -196,7 +201,7 @@ class AffiliateController extends BaseController
 
     }
 
-    public function getSignupQuestions($status = self::DEFAULT_STATUS)
+    public function getSignupQuestions($status = HasOffersConstants::DEFAULT_STATUS)
     {
 
     }
@@ -229,8 +234,8 @@ class AffiliateController extends BaseController
     public function simpleSearch(
         $filters = array(),
         $sort = array(),
-        $limit = self::DEFAULT_LIMIT,
-        $page = self::DEFAULT_PAGE_NUMBER,
+        $limit = HasOffersConstants::DEFAULT_LIMIT,
+        $page = HasOffersConstants::DEFAULT_PAGE_NUMBER,
         array $fields = array()
     ) {
 

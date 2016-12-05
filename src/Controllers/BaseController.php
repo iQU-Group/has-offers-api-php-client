@@ -3,18 +3,11 @@
 namespace Iqu\HasOffersAPIClient\Controllers;
 
 use GuzzleHttp\Client;
+use Iqu\HasOffersAPIClient\HasOffersConstants;
+use Iqu\HasOffersAPIClient\HasOffersResponse;
 
 class BaseController
 {
-    const BASE_API_URL = 'https://api.hasoffers.com/Apiv3/json';
-
-    const DEFAULT_LIMIT = 0;
-    const DEFAULT_PAGE_NUMBER = 1;
-    const DEFAULT_STATUS = '';
-
-    const STATUS_ACTIVE = 'active';
-    const STATUS_DELETED = 'deleted';
-
     protected $networkToken = null;
     protected $networkId = null;
 
@@ -28,27 +21,26 @@ class BaseController
     {
         $client = new Client();
         $response = $client->get($this->buildUrl($target, $method, $options));
-        return $response->getBody()->getContents();
+        return HasOffersResponse::getResponseObject($response->getBody()->getContents());
     }
 
     protected function getUrlArguments($target, $method, array $options = array())
     {
-        $args = array(
-            'NetworkId' => $this->networkId,
-            'Target' => $target,
-            'Method' => $method,
-            'NetworkToken' => $this->networkToken
+        $urlArguments = array(
+            HasOffersConstants::LITERAL_NETWORK_ID => $this->networkId,
+            HasOffersConstants::LITERAL_NETWORK_TOKEN => $this->networkToken,
+            HasOffersConstants::URL_PARAM_TARGET => $target,
+            HasOffersConstants::URL_PARAM_METHOD => $method
         );
-        $args = array_merge($args, $options);
+        $urlArguments = array_merge($urlArguments, $options);
 
-        return $args;
+        return $urlArguments;
     }
 
     protected function buildUrl($target, $method, array $options = array())
     {
-        $args = $this->getUrlArguments($target, $method, $options);
-
-        return self::BASE_API_URL . '?' . http_build_query($args);
+        $urlArguments = $this->getUrlArguments($target, $method, $options);
+        return HasOffersConstants::BASE_API_URL . '?' . http_build_query($urlArguments);
     }
 
     public function getNetworkToken()

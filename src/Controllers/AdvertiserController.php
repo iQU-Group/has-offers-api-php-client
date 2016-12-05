@@ -3,7 +3,6 @@
 namespace Iqu\HasOffersAPIClient\Controllers;
 
 use Iqu\HasOffersAPIClient\HasOffersConstants;
-use Iqu\HasOffersAPIClient\HasOffersResponse;
 
 class AdvertiserController extends BaseController
 {
@@ -17,7 +16,7 @@ class AdvertiserController extends BaseController
 
     }
 
-    public function block($id, $reason)
+    public function block($id, $reason = '')
     {
 
     }
@@ -45,8 +44,8 @@ class AdvertiserController extends BaseController
     public function findAll(
         $filters = array(),
         $sort = array(),
-        $limit = self::DEFAULT_LIMIT,
-        $page = self::DEFAULT_PAGE_NUMBER,
+        $limit = HasOffersConstants::DEFAULT_LIMIT,
+        $page = HasOffersConstants::DEFAULT_PAGE_NUMBER,
         array $fields = array(),
         $contain = array()
     ) {
@@ -56,102 +55,170 @@ class AdvertiserController extends BaseController
             HasOffersConstants::URL_PARAM_FIELDS => $fields,
             HasOffersConstants::URL_PARAM_CONTAIN => $contain
         );
-        if ($limit != self::DEFAULT_LIMIT) {
+        if ($limit != HasOffersConstants::DEFAULT_LIMIT) {
             $urlArguments[HasOffersConstants::URL_PARAM_LIMIT] = $limit;
         }
-        if ($page != self::DEFAULT_PAGE_NUMBER) {
+        if ($page != HasOffersConstants::DEFAULT_PAGE_NUMBER) {
             $urlArguments[HasOffersConstants::URL_PARAM_PAGE] = $page;
         }
-        $hasOffersResponse = $this->sendGetRequest(HasOffersConstants::TARGET_ADVERTISER,
-            HasOffersConstants::METHOD_FIND_ALL, $urlArguments);
-
-        return HasOffersResponse::getResponseObject($hasOffersResponse);
+        return $this->sendGetRequest(HasOffersConstants::TARGET_ADVERTISER, HasOffersConstants::METHOD_FIND_ALL,
+            $urlArguments);
     }
 
     public function findAllByIds(array $ids, array $fields = array(), $contain = array())
     {
-
+        $urlArguments = array(
+            HasOffersConstants::LITERAL_IDS => $ids,
+            HasOffersConstants::URL_PARAM_FIELDS => $fields,
+            HasOffersConstants::URL_PARAM_CONTAIN => $contain
+        );
+        return $this->sendGetRequest(HasOffersConstants::TARGET_ADVERTISER, HasOffersConstants::METHOD_FIND_ALL_BY_IDS,
+            $urlArguments);
     }
 
     public function findAllIds()
     {
-        $hasOffersResponse = $this->sendGetRequest(self::TARGET_ADVERTISER, HasOffersConstants::METHOD_FIND_ALL_IDS);
-        return HasOffersResponse::getResponseObject($hasOffersResponse);
+        return $this->sendGetRequest(HasOffersConstants::TARGET_ADVERTISER, HasOffersConstants::METHOD_FIND_ALL_IDS);
     }
 
     public function findAllIdsByAccountManagerId($employeeId)
     {
-
+        $urlArguments = array(
+            HasOffersConstants::LITERAL_EMPLOYEE_ID => $employeeId
+        );
+        return $this->sendGetRequest(HasOffersConstants::TARGET_ADVERTISER,
+            HasOffersConstants::METHOD_FIND_ALL_IDS_BY_ACCOUNT_MANAGER_ID, $urlArguments);
     }
 
-    public function findAllPendingUnassignedAdvertiserIds($managerId)
+    public function findAllPendingUnassignedAdvertiserIds($managerId = '')
     {
-
+        $urlArguments = array();
+        if ($managerId) {
+            $urlArguments[HasOffersConstants::LITERAL_MANAGER_ID] = $managerId;
+        }
+        return $this->sendGetRequest(HasOffersConstants::TARGET_ADVERTISER,
+            HasOffersConstants::METHOD_FIND_ALL_PENDING_UNASSIGNED_ADVERTISER_IDS, $urlArguments);
     }
 
-    public function findAllPendingUnassignedAdvertisers($employeeId)
+    public function findAllPendingUnassignedAdvertisers($employeeId = '')
     {
-
+        $urlArguments = array();
+        if ($employeeId) {
+            $urlArguments[HasOffersConstants::LITERAL_EMPLOYEE_ID] = $employeeId;
+        }
+        return $this->sendGetRequest(HasOffersConstants::TARGET_ADVERTISER,
+            HasOffersConstants::METHOD_FIND_ALL_PENDING_UNASSIGNED_ADVERTISERS, $urlArguments);
     }
 
     public function findById($id, array $fields = array(), $contain = array())
     {
-
+        $urlArguments = array(
+            HasOffersConstants::LITERAL_ID => $id,
+            HasOffersConstants::URL_PARAM_FIELDS => $fields,
+            HasOffersConstants::URL_PARAM_CONTAIN => $contain
+        );
+        return $this->sendGetRequest(HasOffersConstants::TARGET_ADVERTISER, HasOffersConstants::METHOD_FIND_BY_ID,
+            $urlArguments);
     }
 
     public function getAccountBalance($id)
     {
-
+        $urlArguments = array(
+            HasOffersConstants::LITERAL_ID => $id
+        );
+        return $this->sendGetRequest(HasOffersConstants::TARGET_ADVERTISER,
+            HasOffersConstants::METHOD_GET_ACCOUNT_BALANCE, $urlArguments);
     }
 
     public function getAccountManager($id)
     {
-
+        $urlArguments = array(
+            HasOffersConstants::LITERAL_ID => $id
+        );
+        return $this->sendGetRequest(HasOffersConstants::TARGET_ADVERTISER,
+            HasOffersConstants::METHOD_GET_ACCOUNT_MANAGER, $urlArguments);
     }
 
     public function getAccountNotes($id)
     {
-
+        $urlArguments = array(
+            HasOffersConstants::LITERAL_ID => $id
+        );
+        return $this->sendGetRequest(HasOffersConstants::TARGET_ADVERTISER,
+            HasOffersConstants::METHOD_GET_ACCOUNT_NOTES, $urlArguments);
     }
 
     public function getBlockedAffiliateIds($id)
     {
-
+        $urlArguments = array(
+            HasOffersConstants::LITERAL_ID => $id
+        );
+        return $this->sendGetRequest(HasOffersConstants::TARGET_ADVERTISER,
+            HasOffersConstants::METHOD_GET_BLOCKED_AFFILIATE_IDS, $urlArguments);
     }
 
     public function getBlockedReasons($id)
     {
-
+        $urlArguments = array(
+            HasOffersConstants::LITERAL_ID => $id
+        );
+        return $this->sendGetRequest(HasOffersConstants::TARGET_ADVERTISER,
+            HasOffersConstants::METHOD_GET_BLOCKED_REASONS, $urlArguments);
     }
 
     public function getCreatorUser($id)
     {
-
+        $urlArguments = array(
+            HasOffersConstants::LITERAL_ID => $id
+        );
+        return $this->sendGetRequest(HasOffersConstants::TARGET_ADVERTISER,
+            HasOffersConstants::METHOD_GET_CREATOR_USER, $urlArguments);
     }
 
-    public function getOverview(array $advertiserIds, array $fields = array(), $employeeId = null)
+    public function getOverview(array $advertiserIds = array(), array $fields = array(), $employeeId = '')
     {
-
+        $urlArguments = array(
+            HasOffersConstants::LITERAL_ADVERTISER_IDS => $advertiserIds,
+            HasOffersConstants::LITERAL_FIELDS => $fields
+        );
+        if ($employeeId) {
+            $urlArguments[HasOffersConstants::LITERAL_EMPLOYEE_ID] = $employeeId;
+        }
+        return $this->sendGetRequest(HasOffersConstants::TARGET_ADVERTISER,
+            HasOffersConstants::METHOD_GET_OVERVIEW, $urlArguments);
     }
 
     public function getOwnersAdvertiserAccountId()
     {
-
+        return $this->sendGetRequest(HasOffersConstants::TARGET_ADVERTISER,
+            HasOffersConstants::METHOD_GET_OWNER_ADVERTISER_ACCOUNT_ID);
     }
 
     public function getSignupAnswers($id)
     {
-
+        $urlArguments = array(
+            HasOffersConstants::LITERAL_ID => $id
+        );
+        return $this->sendGetRequest(HasOffersConstants::TARGET_ADVERTISER,
+            HasOffersConstants::METHOD_GET_SIGNUP_ANSWERS, $urlArguments);
     }
 
-    public function getSignupQuestions($status = self::DEFAULT_STATUS)
+    public function getSignupQuestions($status = HasOffersConstants::DEFAULT_STATUS)
     {
-
+        $urlArguments = array(
+            HasOffersConstants::LITERAL_STATUS => $status
+        );
+        return $this->sendGetRequest(HasOffersConstants::TARGET_ADVERTISER,
+            HasOffersConstants::METHOD_GET_SIGNUP_ANSWERS, $urlArguments);
     }
 
     public function getUnblockedAffiliateIds($id)
     {
-
+        $urlArguments = array(
+            HasOffersConstants::LITERAL_ID => $id
+        );
+        return $this->sendGetRequest(HasOffersConstants::TARGET_ADVERTISER,
+            HasOffersConstants::METHOD_GET_UNBLOCKED_AFFILIATE_IDS, $urlArguments);
     }
 
     public function signup($account, $user = null, $meta = null, $returnObject = true)
