@@ -1,5 +1,5 @@
 {
-    "name": "iqu/has-offers",
+    "name": "iqu/has-offers-api-php-client",
     "version": "1.0.0",
     "authors": [
         {
@@ -10,12 +10,14 @@
     "require": {
         "guzzlehttp/guzzle": "^6.2"
     },
+    "require-dev": {
+        "phpunit/phpunit": "5.5.*"
+    },
     "autoload": {
         "psr-4": {
             "Iqu\\HasOffersAPIClient\\": "src/",
             "Iqu\\HasOffersAPIClient\\Interfaces\\": "src/Interfaces",
-            "Iqu\\HasOffersAPIClient\\Controllers\\": "src/Controllers",
-            "Iqu\\HasOffersAPIClient\\Models\\": "src/Models"
+            "Iqu\\HasOffersAPIClient\\Controllers\\": "src/Controllers"
         }
     }
 }

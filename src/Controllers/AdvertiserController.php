@@ -2,6 +2,9 @@
 
 namespace Iqu\HasOffersAPIClient\Controllers;
 
+use Iqu\HasOffersAPIClient\HasOffersConstants;
+use Iqu\HasOffersAPIClient\HasOffersResponse;
+
 class AdvertiserController extends BaseController
 {
     public function __construct($networkToken, $networkId)
@@ -47,7 +50,22 @@ class AdvertiserController extends BaseController
         array $fields = array(),
         $contain = array()
     ) {
+        $urlArguments = array(
+            HasOffersConstants::URL_PARAM_FILTERS => $filters,
+            HasOffersConstants::URL_PARAM_SORT => $sort,
+            HasOffersConstants::URL_PARAM_FIELDS => $fields,
+            HasOffersConstants::URL_PARAM_CONTAIN => $contain
+        );
+        if ($limit != self::DEFAULT_LIMIT) {
+            $urlArguments[HasOffersConstants::URL_PARAM_LIMIT] = $limit;
+        }
+        if ($page != self::DEFAULT_PAGE_NUMBER) {
+            $urlArguments[HasOffersConstants::URL_PARAM_PAGE] = $page;
+        }
+        $hasOffersResponse = $this->sendGetRequest(HasOffersConstants::TARGET_ADVERTISER,
+            HasOffersConstants::METHOD_FIND_ALL, $urlArguments);
 
+        return HasOffersResponse::getResponseObject($hasOffersResponse);
     }
 
     public function findAllByIds(array $ids, array $fields = array(), $contain = array())
@@ -57,7 +75,8 @@ class AdvertiserController extends BaseController
 
     public function findAllIds()
     {
-
+        $hasOffersResponse = $this->sendGetRequest(self::TARGET_ADVERTISER, HasOffersConstants::METHOD_FIND_ALL_IDS);
+        return HasOffersResponse::getResponseObject($hasOffersResponse);
     }
 
     public function findAllIdsByAccountManagerId($employeeId)
