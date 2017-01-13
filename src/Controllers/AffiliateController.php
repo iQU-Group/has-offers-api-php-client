@@ -446,66 +446,135 @@ class AffiliateController extends BaseController
 
     public function update($id, $data, $returnObject = true)
     {
-
+        $postFields = array(
+            HasOffersConstants::LITERAL_ID => $id,
+            HasOffersConstants::LITERAL_DATA => $data,
+            HasOffersConstants::LITERAL_RETURN_OBJECT => $returnObject
+        );
+        return $this->sendPostRequest(HasOffersConstants::TARGET_AFFILIATE, HasOffersConstants::METHOD_UPDATE,
+            $postFields);
     }
 
     public function updateAccountNote($accountNoteId, $note)
     {
-
+        $postFields = array(
+            HasOffersConstants::LITERAL_ACCOUNT_NOTE_ID => $accountNoteId,
+            HasOffersConstants::LITERAL_NOTE => $note
+        );
+        return $this->sendPostRequest(HasOffersConstants::TARGET_AFFILIATE,
+            HasOffersConstants::METHOD_UPDATE_ACCOUNT_NOTE, $postFields);
     }
 
-    public function updateByRefId($refId, $data)
+    public function updateByRefId($refId, array $data, $returnObject = true)
     {
-
+        $postFields = array(
+            HasOffersConstants::LITERAL_REF_ID => $refId,
+            HasOffersConstants::LITERAL_DATA => $data,
+            HasOffersConstants::LITERAL_RETURN_OBJECT => $returnObject
+        );
+        return $this->sendPostRequest(HasOffersConstants::TARGET_AFFILIATE, HasOffersConstants::METHOD_UPDATE_BY_REF_ID,
+            $postFields);
     }
 
     public function updateField($id, $field, $value, $returnObject = true)
     {
-
+        $postFields = array(
+            HasOffersConstants::LITERAL_ID => $id,
+            HasOffersConstants::LITERAL_FIELD => $field,
+            HasOffersConstants::LITERAL_VALUE => $value,
+            HasOffersConstants::LITERAL_RETURN_OBJECT => $returnObject
+        );
+        return $this->sendPostRequest(HasOffersConstants::TARGET_AFFILIATE, HasOffersConstants::METHOD_UPDATE_FIELD,
+            $postFields);
     }
 
-    public function updatePaymentMethodCheck($affiliateId, $data)
+    public function updatePaymentMethodCheck($affiliateId, array $data)
     {
-
+        $postFields = array(
+            HasOffersConstants::LITERAL_AFFILIATE_ID => $affiliateId,
+            HasOffersConstants::LITERAL_DATA => $data
+        );
+        return $this->sendPostRequest(HasOffersConstants::TARGET_AFFILIATE,
+            HasOffersConstants::METHOD_UPDATE_PAYMENT_METHOD_CHECK, $postFields);
     }
 
-    public function updatePaymentMethodDirectDeposit($affiliateId, $data)
+    public function updatePaymentMethodDirectDeposit($affiliateId, array $data)
     {
-
+        $postFields = array(
+            HasOffersConstants::LITERAL_AFFILIATE_ID => $affiliateId,
+            HasOffersConstants::LITERAL_DATA => $data
+        );
+        return $this->sendPostRequest(HasOffersConstants::TARGET_AFFILIATE,
+            HasOffersConstants::METHOD_UPDATE_PAYMENT_METHOD_DIRECT_DEPOSIT, $postFields);
     }
 
-    public function updatePaymentMethodOther($affiliateId, $data)
+    public function updatePaymentMethodOther($affiliateId, array $data)
     {
-
+        $postFields = array(
+            HasOffersConstants::LITERAL_AFFILIATE_ID => $affiliateId,
+            HasOffersConstants::LITERAL_DATA => $data
+        );
+        return $this->sendPostRequest(HasOffersConstants::TARGET_AFFILIATE,
+            HasOffersConstants::METHOD_UPDATE_PAYMENT_METHOD_OTHER, $postFields);
     }
 
-    public function updatePaymentMethodPayQuicker($affiliateId, $data)
+    public function updatePaymentMethodPayQuicker($affiliateId, array $data)
     {
-
+        $postFields = array(
+            HasOffersConstants::LITERAL_AFFILIATE_ID => $affiliateId,
+            HasOffersConstants::LITERAL_DATA => $data
+        );
+        return $this->sendPostRequest(HasOffersConstants::TARGET_AFFILIATE,
+            HasOffersConstants::METHOD_UPDATE_PAYMENT_METHOD_PAY_QUICKER, $postFields);
     }
 
-    public function updatePaymentMethodPayoneer($affiliateId, $data)
+    public function updatePaymentMethodPayoneer($affiliateId, array $data)
     {
-
+        $postFields = array(
+            HasOffersConstants::LITERAL_AFFILIATE_ID => $affiliateId,
+            HasOffersConstants::LITERAL_DATA => $data
+        );
+        return $this->sendPostRequest(HasOffersConstants::TARGET_AFFILIATE,
+            HasOffersConstants::METHOD_UPDATE_PAYMENT_METHOD_PAYONEER, $postFields);
     }
 
-    public function updatePaymentMethodPaypal($affiliateId, $data)
+    public function updatePaymentMethodPaypal($affiliateId, array $data)
     {
-
+        $postFields = array(
+            HasOffersConstants::LITERAL_AFFILIATE_ID => $affiliateId,
+            HasOffersConstants::LITERAL_DATA => $data
+        );
+        return $this->sendPostRequest(HasOffersConstants::TARGET_AFFILIATE,
+            HasOffersConstants::METHOD_UPDATE_PAYMENT_METHOD_PAYPAL, $postFields);
     }
 
-    public function updatePaymentMethodWire($affiliateId, $data)
+    public function updatePaymentMethodWire($affiliateId, array $data)
     {
-
+        $postFields = array(
+            HasOffersConstants::LITERAL_AFFILIATE_ID => $affiliateId,
+            HasOffersConstants::LITERAL_DATA => $data
+        );
+        return $this->sendPostRequest(HasOffersConstants::TARGET_AFFILIATE,
+            HasOffersConstants::METHOD_UPDATE_PAYMENT_METHOD_WIRE, $postFields);
     }
 
     public function updateSignupQuestion($questionId, $data)
     {
-
+        $postFields = array(
+            HasOffersConstants::LITERAL_QUESTION_ID => $questionId,
+            HasOffersConstants::LITERAL_DATA => $data
+        );
+        return $this->sendPostRequest(HasOffersConstants::TARGET_AFFILIATE,
+            HasOffersConstants::METHOD_UPDATE_SIGNUP_QUESTION, $postFields);
     }
 
     public function updateSignupQuestionAnswer($answerId, $data)
     {
-
+        $postFields = array(
+            HasOffersConstants::LITERAL_ANSWER_ID => $answerId,
+            HasOffersConstants::LITERAL_DATA => $data
+        );
+        return $this->sendPostRequest(HasOffersConstants::TARGET_AFFILIATE,
+            HasOffersConstants::METHOD_UPDATE_SIGNUP_QUESTION_ANSWER, $postFields);
     }
 }
