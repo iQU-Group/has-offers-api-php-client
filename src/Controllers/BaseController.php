@@ -10,21 +10,29 @@ class BaseController
 {
     protected $networkToken = null;
     protected $networkId = null;
+    protected $client = null;
 
-    public function __construct($networkToken, $networkId)
+    public function __construct($networkToken, $networkId,Client $client)
     {
         $this->networkToken = $networkToken;
         $this->networkId = $networkId;
+        $this->client = $client;
     }
 
     public function sendGetRequest($target, $method, array $options = array())
     {
-        $client = new Client();
-        $response = $client->get($this->buildUrl($target, $method, $options));
+        $response = $this->client->get($this->buildUrl($target, $method, $options));
         return HasOffersResponse::getResponseObject($response->getBody()->getContents());
     }
 
-    protected function getUrlArguments($target, $method, array $options = array())
+    public function sendPostRequest($target, $method, array $postFields = array())
+    {
+        $args = $this->prepareArguments($target, $method, $postFields);
+        $response = $this->client->post(HasOffersConstants::BASE_API_URL, array('form_params' => $args));
+        return HasOffersResponse::getResponseObject($response->getBody()->getContents());
+    }
+
+    protected function prepareArguments($target, $method, array $options = array())
     {
         $urlArguments = array(
             HasOffersConstants::LITERAL_NETWORK_ID => $this->networkId,
@@ -39,7 +47,7 @@ class BaseController
 
     protected function buildUrl($target, $method, array $options = array())
     {
-        $urlArguments = $this->getUrlArguments($target, $method, $options);
+        $urlArguments = $this->prepareArguments($target, $method, $options);
         return HasOffersConstants::BASE_API_URL . '?' . http_build_query($urlArguments);
     }
 
