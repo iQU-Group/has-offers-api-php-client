@@ -264,31 +264,64 @@ class AdvertiserController extends BaseController
 
     public function unblockAffiliate($id, $affiliateId)
     {
-
+        $postFields = array(
+            HasOffersConstants::LITERAL_ID => $id,
+            HasOffersConstants::LITERAL_AFFILIATE_ID => $affiliateId
+        );
+        return $this->sendPostRequest(HasOffersConstants::TARGET_ADVERTISER,
+            HasOffersConstants::METHOD_UNBLOCK_AFFILIATE, $postFields);
     }
 
     public function update($id, $data, $returnObject = true)
     {
-
+        $postFields = array(
+            HasOffersConstants::LITERAL_ID => $id,
+            HasOffersConstants::LITERAL_DATA => $data,
+            HasOffersConstants::LITERAL_RETURN_OBJECT => $returnObject
+        );
+        return $this->sendPostRequest(HasOffersConstants::TARGET_ADVERTISER, HasOffersConstants::METHOD_UPDATE,
+            $postFields);
     }
 
     public function updateAccountNote($accountNoteId, $note)
     {
-
+        $postFields = array(
+            HasOffersConstants::LITERAL_ACCOUNT_NOTE_ID => $accountNoteId,
+            HasOffersConstants::LITERAL_NOTE => $note
+        );
+        return $this->sendPostRequest(HasOffersConstants::TARGET_ADVERTISER,
+            HasOffersConstants::METHOD_UPDATE_ACCOUNT_NOTE, $postFields);
     }
 
     public function updateField($id, $field, $value, $returnObject = true)
     {
-
+        $postFields = array(
+            HasOffersConstants::LITERAL_ID => $id,
+            HasOffersConstants::LITERAL_FIELD => $field,
+            HasOffersConstants::LITERAL_VALUE => $value,
+            HasOffersConstants::LITERAL_RETURN_OBJECT => $returnObject
+        );
+        return $this->sendPostRequest(HasOffersConstants::TARGET_ADVERTISER, HasOffersConstants::METHOD_UPDATE_FIELD,
+            $postFields);
     }
 
-    public function updateSignupQuestion($questionId, $data)
+    public function updateSignupQuestion($questionId, array $data)
     {
-
+        $postFields = array(
+            HasOffersConstants::LITERAL_QUESTION_ID => $questionId,
+            HasOffersConstants::LITERAL_DATA => $data
+        );
+        return $this->sendPostRequest(HasOffersConstants::TARGET_ADVERTISER,
+            HasOffersConstants::METHOD_UPDATE_SIGNUP_QUESTION, $postFields);
     }
 
-    public function updateSignupQuestionAnswer($answerId, $data)
+    public function updateSignupQuestionAnswer($answerId, array $data)
     {
-
+        $postFields = array(
+            HasOffersConstants::LITERAL_ANSWER_ID => $answerId,
+            HasOffersConstants::LITERAL_DATA => $data
+        );
+        return $this->sendPostRequest(HasOffersConstants::TARGET_ADVERTISER,
+            HasOffersConstants::METHOD_UPDATE_SIGNUP_QUESTION_ANSWER, $postFields);
     }
 }

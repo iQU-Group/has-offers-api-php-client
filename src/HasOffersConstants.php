@@ -27,6 +27,8 @@ abstract class HasOffersConstants
     const URL_PARAM_TARGET = "Target";
 
     const LITERAL_ACTION = "action";
+    const LITERAL_ACCOUNT_NOTE_ID = "account_note_id";
+    const LITERAL_ANSWER_ID = "answer_id";
     const LITERAL_ACTIONS = "actions";
     const LITERAL_ACCOUNT = "account";
     const LITERAL_ADVERTISER_IDS = "advertiser_ids";
@@ -37,6 +39,7 @@ abstract class HasOffersConstants
     const LITERAL_COUNTRY = "country";
     const LITERAL_CURRENCY = "currency";
     const LITERAL_QUANTITY = "quantity";
+    const LITERAL_QUESTION_ID = "question_id";
     const LITERAL_GOAL_ID = "goal_id";
     const LITERAL_DATA = "data";
     const LITERAL_DATE_TIME = "datetime";
@@ -91,6 +94,8 @@ abstract class HasOffersConstants
     const METHOD_SIGNUP = "signup";
     const METHOD_SIMPLE_SEARCH = "simpleSearch";
     const METHOD_CREATE = "create";
+    const METHOD_UPDATE = "update";
+    const METHOD_UPDATE_ACCOUNT_NOTE = "updateAccountNote";
     const METHOD_CREATE_INVOICE = "createInvoice";
     const METHOD_CREATE_SIGNUP_QUESTION = "createSignupQuestion";
     const METHOD_CREATE_SIGNUP_QUESTION_ANSWER = "createSignupQuestionAnswer";
@@ -141,6 +146,9 @@ abstract class HasOffersConstants
     const METHOD_REMOVE_CUSTOM_REFERRAL_COMMISSION = "removeCustomReferralCommission";
     const METHOD_SET_CUSTOM_REFERRAL_COMMISSION = "setCustomReferralCommission";
     const METHOD_UPDATE_INVOICE_FIELD = "updateInvoiceField";
+    const METHOD_UPDATE_FIELD = "updateField";
+    const METHOD_UPDATE_SIGNUP_QUESTION = "updateSignupQuestion";
+    const METHOD_UPDATE_SIGNUP_QUESTION_ANSWER = "updateSignupQuestionAnswer";
     const METHOD_UNBLOCK_AFFILIATE = "unblockAffiliate";
 
     const PAYOUT_TYPE_AMOUNT = "amount";
