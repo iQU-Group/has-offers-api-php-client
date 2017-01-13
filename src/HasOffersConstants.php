@@ -87,6 +87,7 @@ abstract class HasOffersConstants
     const METHOD_ADD_ACCOUNT_NOTE = "addAccountNote";
     const METHOD_ADJUST_AFFILIATE_CLICKS = "adjustAffiliateClicks";
     const METHOD_BLOCK = "block";
+    const METHOD_BLOCK_AFFILIATE = "blockAffiliate";
     const METHOD_SIGNUP = "signup";
     const METHOD_SIMPLE_SEARCH = "simpleSearch";
     const METHOD_CREATE = "create";
@@ -140,6 +141,7 @@ abstract class HasOffersConstants
     const METHOD_REMOVE_CUSTOM_REFERRAL_COMMISSION = "removeCustomReferralCommission";
     const METHOD_SET_CUSTOM_REFERRAL_COMMISSION = "setCustomReferralCommission";
     const METHOD_UPDATE_INVOICE_FIELD = "updateInvoiceField";
+    const METHOD_UNBLOCK_AFFILIATE = "unblockAffiliate";
 
     const PAYOUT_TYPE_AMOUNT = "amount";
     const CPA_FLAT = "cpa_flat";

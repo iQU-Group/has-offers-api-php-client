@@ -33,7 +33,12 @@ class AdvertiserController extends BaseController
 
     public function blockAffiliate($id, $affiliateId)
     {
-
+        $postFields = array(
+            HasOffersConstants::LITERAL_ID => $id,
+            HasOffersConstants::LITERAL_AFFILIATE_ID => $affiliateId
+        );
+        return $this->sendPostRequest(HasOffersConstants::TARGET_ADVERTISER, HasOffersConstants::METHOD_BLOCK_AFFILIATE,
+            $postFields);
     }
 
     public function create($data, $returnObject = true)
