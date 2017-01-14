@@ -7,6 +7,7 @@
             "email": "karvounis.b@gmail.com"
         }
     ],
+    "license": "MIT",
     "require": {
         "guzzlehttp/guzzle": "^6.2"
     },
