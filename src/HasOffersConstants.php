@@ -105,6 +105,7 @@ abstract class HasOffersConstants
     const METHOD_FIND_ALL_IDS = "findAllIds";
     const METHOD_FIND_ALL_IDS_BY_ACCOUNT_MANAGER_ID = "findAllIdsByAccountManagerId";
     const METHOD_FIND_ALL_IDS_BY_ADVERTISER_ID = "findAllIdsByAdvertiserId";
+    const METHOD_FIND_ALL_IDS_BY_AFFILIATE_ID = "findAllIdsByAffiliateId";
     const METHOD_FIND_ALL_INVOICES = "findAllInvoices";
     const METHOD_FIND_ALL_INVOICES_BY_IDS = "findAllInvoicesByIds";
     const METHOD_FIND_ALL_PENDING_UNASSIGNED_ADVERTISERS = "findAllPendingUnassignedAdvertisers";
