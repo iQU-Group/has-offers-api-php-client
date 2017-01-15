@@ -37,6 +37,7 @@ abstract class HasOffersConstants
     const LITERAL_CURRENCY = "currency";
     const LITERAL_DATA = "data";
     const LITERAL_DATE_TIME = "datetime";
+    const LITERAL_EMAIL = "email";
     const LITERAL_EMPLOYEE_ID = "employee_id";
     const LITERAL_END_DATE = "end_date";
     const LITERAL_FIELD = "field";
@@ -48,6 +49,7 @@ abstract class HasOffersConstants
     const LITERAL_IDS = "ids";
     const LITERAL_INVOICE_ID = "invoice_id";
     const LITERAL_IS_PAID = "is_paid";
+    const LITERAL_LENGTH = "length";
     const LITERAL_MANAGER_ID = "manager_id";
     const LITERAL_MEMO = "memo";
     const LITERAL_META = "meta";
@@ -58,7 +60,9 @@ abstract class HasOffersConstants
     const LITERAL_PARAMS = "params";
     const LITERAL_OFFER_ID = "offer_id";
     const LITERAL_OPTIONS = "options";
+    const LITERAL_PASSWORD = "password";
     const LITERAL_PAYOUT_TYPE = "payout_type";
+    const LITERAL_PERMISSION = "permission";
     const LITERAL_QUANTITY = "quantity";
     const LITERAL_QUESTION_ID = "question_id";
     const LITERAL_REASON = "reason";
@@ -81,6 +85,7 @@ abstract class HasOffersConstants
     const METHOD_ADJUST_AFFILIATE_CLICKS = "adjustAffiliateClicks";
     const METHOD_BLOCK = "block";
     const METHOD_BLOCK_AFFILIATE = "blockAffiliate";
+    const METHOD_CHECK_PASSWORD = "checkPassword";
     const METHOD_CREATE = "create";
     const METHOD_CREATE_CAMPAIGN = "createCampaign";
     const METHOD_CREATE_INVOICE = "createInvoice";
@@ -99,6 +104,7 @@ abstract class HasOffersConstants
     const METHOD_FIND_ALL_FRAUD_ALERTS = "findAllFraudAlerts";
     const METHOD_FIND_ALL_IDS = "findAllIds";
     const METHOD_FIND_ALL_IDS_BY_ACCOUNT_MANAGER_ID = "findAllIdsByAccountManagerId";
+    const METHOD_FIND_ALL_IDS_BY_ADVERTISER_ID = "findAllIdsByAdvertiserId";
     const METHOD_FIND_ALL_INVOICES = "findAllInvoices";
     const METHOD_FIND_ALL_INVOICES_BY_IDS = "findAllInvoicesByIds";
     const METHOD_FIND_ALL_PENDING_UNASSIGNED_ADVERTISERS = "findAllPendingUnassignedAdvertisers";
@@ -145,14 +151,18 @@ abstract class HasOffersConstants
     const METHOD_GET_UNBLOCKED_OFFER_IDS = "getUnblockedOfferIds";
     const METHOD_GET_USAGE = "getUsage";
 
+    const METHOD_GRANT_ACCESS = "grantAccess";
+    const METHOD_REMOVE_ACCESS = "removeAccess";
     const METHOD_REMOVE_CUSTOM_REFERRAL_COMMISSION = "removeCustomReferralCommission";
     const METHOD_REMOVE_INVOICE_ITEM = "removeInvoiceItem";
+    const METHOD_RESET_PASSWORD = "resetPassword";
     const METHOD_SET_CREATIVE_CUSTOM_WEIGHTS = "setCreativeCustomWeights";
     const METHOD_SET_CREATIVE_WEIGHTS = "setCreativeWeights";
     const METHOD_SET_CUSTOM_REFERRAL_COMMISSION = "setCustomReferralCommission";
     const METHOD_SIGNUP = "signup";
     const METHOD_SIMPLE_SEARCH = "simpleSearch";
     const METHOD_UNBLOCK_AFFILIATE = "unblockAffiliate";
+    const METHOD_UNIQUE_EMAIL = "uniqueEmail";
 
     const METHOD_UPDATE = "update";
     const METHOD_UPDATE_ACCOUNT_NOTE = "updateAccountNote";
