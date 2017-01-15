@@ -24,12 +24,15 @@ abstract class HasOffersConstants
     const LITERAL_ACTION = "action";
     const LITERAL_ACTIONS = "actions";
     const LITERAL_ADVERTISER_IDS = "advertiser_ids";
+    const LITERAL_AFFILIATE_ACCESS = "affiliate_access";
     const LITERAL_AFFILIATE_ID = "affiliate_id";
     const LITERAL_AMOUNT = "amount";
     const LITERAL_ANSWER_ID = "answer_id";
+    const LITERAL_CAMPAIGN_ID = "campaign_id";
     const LITERAL_COMPANY = "company";
     const LITERAL_CONTAIN = "contain";
     const LITERAL_COUNTRY = "country";
+    const LITERAL_CREATIVE_ID = "creative_id";
     const LITERAL_CURRENCY = "currency";
     const LITERAL_DATA = "data";
     const LITERAL_DATE_TIME = "datetime";
@@ -51,7 +54,9 @@ abstract class HasOffersConstants
     const LITERAL_NETWORK_ID = "NetworkId";
     const LITERAL_NETWORK_TOKEN = "NetworkToken";
     const LITERAL_NOTE = "note";
+    const LITERAL_PARAMS = "params";
     const LITERAL_OFFER_ID = "offer_id";
+    const LITERAL_OPTIONS = "options";
     const LITERAL_PAYOUT_TYPE = "payout_type";
     const LITERAL_QUANTITY = "quantity";
     const LITERAL_QUESTION_ID = "question_id";
@@ -70,20 +75,25 @@ abstract class HasOffersConstants
     const LITERAL_VAT_RATE = "vat_rate";
 
     const METHOD_ADD_ACCOUNT_NOTE = "addAccountNote";
+    const METHOD_ADD_CREATIVE = "addCreative";
     const METHOD_ADD_INVOICE_ITEM = "addInvoiceItem";
     const METHOD_ADJUST_AFFILIATE_CLICKS = "adjustAffiliateClicks";
     const METHOD_BLOCK = "block";
     const METHOD_BLOCK_AFFILIATE = "blockAffiliate";
     const METHOD_CREATE = "create";
+    const METHOD_CREATE_CAMPAIGN = "createCampaign";
     const METHOD_CREATE_INVOICE = "createInvoice";
     const METHOD_CREATE_SIGNUP_QUESTION = "createSignupQuestion";
     const METHOD_CREATE_SIGNUP_QUESTION_ANSWER = "createSignupQuestionAnswer";
     const METHOD_DISABLE_FRAUD_ALERT = "disableFraudAlert";
     const METHOD_ENABLE_FRAUD_ALERT = "enableFraudAlert";
+
     const METHOD_FIND_ALL = "findAll";
     const METHOD_FIND_ALL_ADVERTISER_MANAGERS = "findAllAdvertiserManagers";
     const METHOD_FIND_ALL_AFFILIATE_MANAGERS = "findAllAffiliateManagers";
     const METHOD_FIND_ALL_BY_IDS = "findAllByIds";
+    const METHOD_FIND_ALL_CAMPAIGNS = "findAllCampaigns";
+    const METHOD_FIND_ALL_CREATIVES = "findAllCreatives";
     const METHOD_FIND_ALL_COUNTRIES = "findAllCountries";
     const METHOD_FIND_ALL_FRAUD_ALERTS = "findAllFraudAlerts";
     const METHOD_FIND_ALL_IDS = "findAllIds";
@@ -93,16 +103,22 @@ abstract class HasOffersConstants
     const METHOD_FIND_ALL_PENDING_UNASSIGNED_AFFILIATES = "findAllPendingUnassignedAffiliates";
     const METHOD_FIND_ALL_PENDING_UNASSIGNED_AFFILIATE_IDS = "findAllPendingUnassignedAffiliateIds";
     const METHOD_FIND_BY_ID = "findById";
+    const METHOD_FIND_CAMPAIGN_BY_ID = "findCampaignById";
+    const METHOD_FIND_CREATIVE_BY_ID = "findCreativeById";
     const METHOD_FIND_INVOICE_STATS = "findInvoiceStats";
     const METHOD_FIND_LIST = "findList";
+
     const METHOD_GET_ACCOUNT_BALANCE = "getAccountBalance";
     const METHOD_GET_ACCOUNT_MANAGER = "getAccountManager";
     const METHOD_GET_ACCOUNT_NOTES = "getAccountNotes";
+    const METHOD_GET_ACTIVE_NETWORK_CAMPAIGN_COUNT = "getActiveNetworkCampaignCount";
     const METHOD_GET_AFFILIATE_TIER = "getAffiliateTier";
     const METHOD_GET_APPROVED_OFFER_IDS = "getApprovedOfferIds";
     const METHOD_GET_BLOCKED_AFFILIATE_IDS = "getBlockedAffiliateIds";
     const METHOD_GET_BLOCKED_OFFER_IDS = "getBlockedOfferIds";
     const METHOD_GET_BLOCKED_REASONS = "getBlockedReasons";
+    const METHOD_GET_CAMPAIGN_CODE = "getCampaignCode";
+    const METHOD_GET_CAMPAIGN_CREATIVES = "getCampaignCreatives";
     const METHOD_GET_CREATOR_USER = "getCreatorUser";
     const METHOD_GET_OFFER_CONVERSION_CAPS = "getOfferConversionCaps";
     const METHOD_GET_OFFER_HOSTNAMES = "getOfferHostnames";
@@ -122,14 +138,23 @@ abstract class HasOffersConstants
     const METHOD_GET_UNAPPROVED_OFFER_IDS = "getUnapprovedOfferIds";
     const METHOD_GET_UNBLOCKED_AFFILIATE_IDS = "getUnblockedAffiliateIds";
     const METHOD_GET_UNBLOCKED_OFFER_IDS = "getUnblockedOfferIds";
+    const METHOD_GET_USAGE = "getUsage";
+
     const METHOD_REMOVE_CUSTOM_REFERRAL_COMMISSION = "removeCustomReferralCommission";
+    const METHOD_SET_CREATIVE_CUSTOM_WEIGHTS = "setCreativeCustomWeights";
+    const METHOD_SET_CREATIVE_WEIGHTS = "setCreativeWeights";
     const METHOD_SET_CUSTOM_REFERRAL_COMMISSION = "setCustomReferralCommission";
     const METHOD_SIGNUP = "signup";
     const METHOD_SIMPLE_SEARCH = "simpleSearch";
     const METHOD_UNBLOCK_AFFILIATE = "unblockAffiliate";
+
     const METHOD_UPDATE = "update";
     const METHOD_UPDATE_ACCOUNT_NOTE = "updateAccountNote";
     const METHOD_UPDATE_BY_REF_ID = "'updateByRefId";
+    const METHOD_UPDATE_CAMPAIGN = "updateCampaign";
+    const METHOD_UPDATE_CAMPAIGN_FIELD = "updateCampaignField";
+    const METHOD_UPDATE_CREATIVE = "updateCreative";
+    const METHOD_UPDATE_CREATIVE_FIELD = "updateCreativeField";
     const METHOD_UPDATE_FIELD = "updateField";
     const METHOD_UPDATE_INVOICE_FIELD = "updateInvoiceField";
     const METHOD_UPDATE_PAYMENT_METHOD_CHECK = "'updatePaymentMethodCheck";
@@ -154,6 +179,7 @@ abstract class HasOffersConstants
     const STATUS_PAUSED = "paused";
 
     const TARGET_ACCOUNT_MANAGER = "AccountManager";
+    const TARGET_AD_MANAGER = "AdManager";
     const TARGET_ADVERTISER = "Advertiser";
     const TARGET_ADVERTISER_BILLING = "AdvertiserBilling";
     const TARGET_ADVERTISER_USER = "AdvertiserUser";
