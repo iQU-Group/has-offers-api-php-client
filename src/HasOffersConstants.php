@@ -27,6 +27,7 @@ abstract class HasOffersConstants
     const LITERAL_ADVERTISER_IDS = "advertiser_ids";
     const LITERAL_AFFILIATE_ACCESS = "affiliate_access";
     const LITERAL_AFFILIATE_ID = "affiliate_id";
+    const LITERAL_AFFILIATE_ID_CAMEL_CASE = "affiliateId";
     const LITERAL_AMOUNT = "amount";
     const LITERAL_ANSWER_ID = "answer_id";
     const LITERAL_CAMPAIGN_ID = "campaign_id";
@@ -36,6 +37,7 @@ abstract class HasOffersConstants
     const LITERAL_CREATIVE_ID = "creative_id";
     const LITERAL_CURRENCY = "currency";
     const LITERAL_DATA = "data";
+    const LITERAL_DATE = "date";
     const LITERAL_DATE_TIME = "datetime";
     const LITERAL_EMAIL = "email";
     const LITERAL_EMPLOYEE_ID = "employee_id";
@@ -47,6 +49,7 @@ abstract class HasOffersConstants
     const LITERAL_GOAL_ID = "goal_id";
     const LITERAL_ID = "id";
     const LITERAL_IDS = "ids";
+    const LITERAL_IGNORE_PREFERENCE = "ignore_preference";
     const LITERAL_INVOICE_ID = "invoice_id";
     const LITERAL_IS_PAID = "is_paid";
     const LITERAL_LENGTH = "length";
@@ -71,6 +74,7 @@ abstract class HasOffersConstants
     const LITERAL_SORT = 'sort';
     const LITERAL_START_DATE = "start_date";
     const LITERAL_STATUS = "status";
+    const LITERAL_TIMEFRAMES = "timeframes";
     const LITERAL_TYPE = "type";
     const LITERAL_USER = "user";
     const LITERAL_VALUE = "value";
@@ -89,6 +93,7 @@ abstract class HasOffersConstants
     const METHOD_CREATE = "create";
     const METHOD_CREATE_CAMPAIGN = "createCampaign";
     const METHOD_CREATE_INVOICE = "createInvoice";
+    const METHOD_CREATE_RECEIPT = "createReceipt";
     const METHOD_CREATE_SIGNUP_QUESTION = "createSignupQuestion";
     const METHOD_CREATE_SIGNUP_QUESTION_ANSWER = "createSignupQuestionAnswer";
     const METHOD_DISABLE_FRAUD_ALERT = "disableFraudAlert";
@@ -112,14 +117,22 @@ abstract class HasOffersConstants
     const METHOD_FIND_ALL_PENDING_UNASSIGNED_ADVERTISER_IDS = "findAllPendingUnassignedAdvertiserIds";
     const METHOD_FIND_ALL_PENDING_UNASSIGNED_AFFILIATES = "findAllPendingUnassignedAffiliates";
     const METHOD_FIND_ALL_PENDING_UNASSIGNED_AFFILIATE_IDS = "findAllPendingUnassignedAffiliateIds";
+    const METHOD_FIND_ALL_RECEIPTS = "findAllReceipts";
+    const METHOD_FIND_ALL_RECEIPTS_BY_IDS = "findAllReceiptsByIds";
     const METHOD_FIND_BY_ID = "findById";
     const METHOD_FIND_CAMPAIGN_BY_ID = "findCampaignById";
     const METHOD_FIND_CREATIVE_BY_ID = "findCreativeById";
     const METHOD_FIND_INVOICE_BY_ID = "findInvoiceById";
     const METHOD_FIND_INVOICE_STATS = "findInvoiceStats";
+    const METHOD_FIND_LAST_INVOICE = "findLastInvoice";
+    const METHOD_FIND_LAST_RECEIPT = "findLastReceipt";
     const METHOD_FIND_LIST = "findList";
+    const METHOD_FIND_RECEIPT_BY_ID = "findReceiptById";
+
+    const METHOD_GENERATE_INVOICES = "generateInvoices";
 
     const METHOD_GET_ACCOUNT_BALANCE = "getAccountBalance";
+    const METHOD_GET_ACCOUNT_HISTORY = "getAccountHistory";
     const METHOD_GET_ACCOUNT_MANAGER = "getAccountManager";
     const METHOD_GET_ACCOUNT_NOTES = "getAccountNotes";
     const METHOD_GET_ACTIVE_NETWORK_CAMPAIGN_COUNT = "getActiveNetworkCampaignCount";
@@ -137,6 +150,7 @@ abstract class HasOffersConstants
     const METHOD_GET_OFFER_PAYOUTS = "getOfferPayouts";
     const METHOD_GET_OFFER_PAYOUTS_ALL = "getOfferPayoutsAll";
     const METHOD_GET_OFFER_PIXELS = "getOfferPixels";
+    const METHOD_GET_OUTSTANDING_INVOICES = "getOutstandingInvoices";
     const METHOD_GET_OVERVIEW = "getOverview";
     const METHOD_GET_OWNERS_ADVERTISER_ACCOUNT_ID = "getOwnersAdvertiserAccountId";
     const METHOD_GET_OWNERS_AFFILIATE_ACCOUNT_ID = "getOwnersAffiliateAccountId";
@@ -182,6 +196,8 @@ abstract class HasOffersConstants
     const METHOD_UPDATE_PAYMENT_METHOD_PAYPAL = "'updatePaymentMethodPaypal";
     const METHOD_UPDATE_PAYMENT_METHOD_PAY_QUICKER = "'updatePaymentMethodPayQuicker";
     const METHOD_UPDATE_PAYMENT_METHOD_WIRE = "'updatePaymentMethodWire";
+    const METHOD_UPDATE_RECEIPT = "'updateReceipt";
+    const METHOD_UPDATE_RECEIPT_FIELD = "'updateReceiptField";
     const METHOD_UPDATE_SIGNUP_QUESTION = "updateSignupQuestion";
     const METHOD_UPDATE_SIGNUP_QUESTION_ANSWER = "updateSignupQuestionAnswer";
     const METHOD_UPDATE_TAX_INFO = "updateTaxInfo";

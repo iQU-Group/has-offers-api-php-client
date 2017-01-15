@@ -87,7 +87,7 @@ class AdvertiserBillingController extends BaseController
             HasOffersConstants::URL_PARAM_CONTAIN => $contain
         );
         return $this->sendGetRequest(HasOffersConstants::TARGET_ADVERTISER_BILLING,
-            HasOffersConstants::METHOD_FIND_ALL_INVOICES, $arguments);
+            HasOffersConstants::METHOD_FIND_ALL_INVOICES_BY_IDS, $arguments);
     }
 
     /**
