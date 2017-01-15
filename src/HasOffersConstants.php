@@ -23,6 +23,7 @@ abstract class HasOffersConstants
     const LITERAL_ACCOUNT_NOTE_ID = "account_note_id";
     const LITERAL_ACTION = "action";
     const LITERAL_ACTIONS = "actions";
+    const LITERAL_ADVERTISER_ID = "advertiser_id";
     const LITERAL_ADVERTISER_IDS = "advertiser_ids";
     const LITERAL_AFFILIATE_ACCESS = "affiliate_access";
     const LITERAL_AFFILIATE_ID = "affiliate_id";
@@ -98,6 +99,8 @@ abstract class HasOffersConstants
     const METHOD_FIND_ALL_FRAUD_ALERTS = "findAllFraudAlerts";
     const METHOD_FIND_ALL_IDS = "findAllIds";
     const METHOD_FIND_ALL_IDS_BY_ACCOUNT_MANAGER_ID = "findAllIdsByAccountManagerId";
+    const METHOD_FIND_ALL_INVOICES = "findAllInvoices";
+    const METHOD_FIND_ALL_INVOICES_BY_IDS = "findAllInvoicesByIds";
     const METHOD_FIND_ALL_PENDING_UNASSIGNED_ADVERTISERS = "findAllPendingUnassignedAdvertisers";
     const METHOD_FIND_ALL_PENDING_UNASSIGNED_ADVERTISER_IDS = "findAllPendingUnassignedAdvertiserIds";
     const METHOD_FIND_ALL_PENDING_UNASSIGNED_AFFILIATES = "findAllPendingUnassignedAffiliates";
@@ -105,6 +108,7 @@ abstract class HasOffersConstants
     const METHOD_FIND_BY_ID = "findById";
     const METHOD_FIND_CAMPAIGN_BY_ID = "findCampaignById";
     const METHOD_FIND_CREATIVE_BY_ID = "findCreativeById";
+    const METHOD_FIND_INVOICE_BY_ID = "findInvoiceById";
     const METHOD_FIND_INVOICE_STATS = "findInvoiceStats";
     const METHOD_FIND_LIST = "findList";
 
@@ -120,6 +124,7 @@ abstract class HasOffersConstants
     const METHOD_GET_CAMPAIGN_CODE = "getCampaignCode";
     const METHOD_GET_CAMPAIGN_CREATIVES = "getCampaignCreatives";
     const METHOD_GET_CREATOR_USER = "getCreatorUser";
+    const METHOD_GET_NEXT_START_DATE = "getNextStartDate";
     const METHOD_GET_OFFER_CONVERSION_CAPS = "getOfferConversionCaps";
     const METHOD_GET_OFFER_HOSTNAMES = "getOfferHostnames";
     const METHOD_GET_OFFER_PAYOUTS = "getOfferPayouts";
@@ -141,6 +146,7 @@ abstract class HasOffersConstants
     const METHOD_GET_USAGE = "getUsage";
 
     const METHOD_REMOVE_CUSTOM_REFERRAL_COMMISSION = "removeCustomReferralCommission";
+    const METHOD_REMOVE_INVOICE_ITEM = "removeInvoiceItem";
     const METHOD_SET_CREATIVE_CUSTOM_WEIGHTS = "setCreativeCustomWeights";
     const METHOD_SET_CREATIVE_WEIGHTS = "setCreativeWeights";
     const METHOD_SET_CUSTOM_REFERRAL_COMMISSION = "setCustomReferralCommission";
@@ -156,6 +162,7 @@ abstract class HasOffersConstants
     const METHOD_UPDATE_CREATIVE = "updateCreative";
     const METHOD_UPDATE_CREATIVE_FIELD = "updateCreativeField";
     const METHOD_UPDATE_FIELD = "updateField";
+    const METHOD_UPDATE_INVOICE = "updateInvoice";
     const METHOD_UPDATE_INVOICE_FIELD = "updateInvoiceField";
     const METHOD_UPDATE_PAYMENT_METHOD_CHECK = "'updatePaymentMethodCheck";
     const METHOD_UPDATE_PAYMENT_METHOD_DIRECT_DEPOSIT = "'updatePaymentMethodDirectDeposit";
@@ -166,6 +173,7 @@ abstract class HasOffersConstants
     const METHOD_UPDATE_PAYMENT_METHOD_WIRE = "'updatePaymentMethodWire";
     const METHOD_UPDATE_SIGNUP_QUESTION = "updateSignupQuestion";
     const METHOD_UPDATE_SIGNUP_QUESTION_ANSWER = "updateSignupQuestionAnswer";
+    const METHOD_UPDATE_TAX_INFO = "updateTaxInfo";
 
     const PAYOUT_TYPE_AMOUNT = "amount";
     const PAYOUT_TYPE_CPA_BOTH = "cpa_both";
