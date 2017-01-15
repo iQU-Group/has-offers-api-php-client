@@ -103,11 +103,13 @@ abstract class HasOffersConstants
     const METHOD_FIND_ALL_ADVERTISER_MANAGERS = "findAllAdvertiserManagers";
     const METHOD_FIND_ALL_AFFILIATE_MANAGERS = "findAllAffiliateManagers";
     const METHOD_FIND_ALL_BY_IDS = "findAllByIds";
+    const METHOD_FIND_ALL_BY_PERMISSION = "findAllByPermission";
     const METHOD_FIND_ALL_CAMPAIGNS = "findAllCampaigns";
     const METHOD_FIND_ALL_CREATIVES = "findAllCreatives";
     const METHOD_FIND_ALL_COUNTRIES = "findAllCountries";
     const METHOD_FIND_ALL_FRAUD_ALERTS = "findAllFraudAlerts";
     const METHOD_FIND_ALL_IDS = "findAllIds";
+    const METHOD_FIND_ALL_IDS_BY_PERMISSION = "findAllIdsByPermission";
     const METHOD_FIND_ALL_IDS_BY_ACCOUNT_MANAGER_ID = "findAllIdsByAccountManagerId";
     const METHOD_FIND_ALL_IDS_BY_ADVERTISER_ID = "findAllIdsByAdvertiserId";
     const METHOD_FIND_ALL_IDS_BY_AFFILIATE_ID = "findAllIdsByAffiliateId";
@@ -119,6 +121,7 @@ abstract class HasOffersConstants
     const METHOD_FIND_ALL_PENDING_UNASSIGNED_AFFILIATE_IDS = "findAllPendingUnassignedAffiliateIds";
     const METHOD_FIND_ALL_RECEIPTS = "findAllReceipts";
     const METHOD_FIND_ALL_RECEIPTS_BY_IDS = "findAllReceiptsByIds";
+    const METHOD_FIND_BRAND_OWNER_INFORMATION = "findBrandOwnerInformation";
     const METHOD_FIND_BY_ID = "findById";
     const METHOD_FIND_CAMPAIGN_BY_ID = "findCampaignById";
     const METHOD_FIND_CREATIVE_BY_ID = "findCreativeById";
@@ -143,7 +146,9 @@ abstract class HasOffersConstants
     const METHOD_GET_BLOCKED_REASONS = "getBlockedReasons";
     const METHOD_GET_CAMPAIGN_CODE = "getCampaignCode";
     const METHOD_GET_CAMPAIGN_CREATIVES = "getCampaignCreatives";
+    const METHOD_GET_COMMISSION = "getCommission";
     const METHOD_GET_CREATOR_USER = "getCreatorUser";
+    const METHOD_GET_HO_MESSAGE = "getHOMessage";
     const METHOD_GET_NEXT_START_DATE = "getNextStartDate";
     const METHOD_GET_OFFER_CONVERSION_CAPS = "getOfferConversionCaps";
     const METHOD_GET_OFFER_HOSTNAMES = "getOfferHostnames";
@@ -168,11 +173,13 @@ abstract class HasOffersConstants
 
     const METHOD_GRANT_ACCESS = "grantAccess";
     const METHOD_REMOVE_ACCESS = "removeAccess";
+    const METHOD_REMOVE_CUSTOM_COMMISSION = "removeCustomCommission";
     const METHOD_REMOVE_CUSTOM_REFERRAL_COMMISSION = "removeCustomReferralCommission";
     const METHOD_REMOVE_INVOICE_ITEM = "removeInvoiceItem";
     const METHOD_RESET_PASSWORD = "resetPassword";
     const METHOD_SET_CREATIVE_CUSTOM_WEIGHTS = "setCreativeCustomWeights";
     const METHOD_SET_CREATIVE_WEIGHTS = "setCreativeWeights";
+    const METHOD_SET_CUSTOM_COMMISSION = "setCustomCommission";
     const METHOD_SET_CUSTOM_REFERRAL_COMMISSION = "setCustomReferralCommission";
     const METHOD_SIGNUP = "signup";
     const METHOD_SIMPLE_SEARCH = "simpleSearch";
