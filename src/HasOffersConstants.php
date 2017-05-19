@@ -60,6 +60,7 @@ abstract class HasOffersConstants
     const LITERAL_NETWORK_ID = "NetworkId";
     const LITERAL_NETWORK_TOKEN = "NetworkToken";
     const LITERAL_NOTE = "note";
+    const LITERAL_NOTES = "notes";
     const LITERAL_PARAMS = "params";
     const LITERAL_OFFER_ID = "offer_id";
     const LITERAL_OPTIONS = "options";
@@ -160,9 +161,11 @@ abstract class HasOffersConstants
     const METHOD_GET_OWNERS_ADVERTISER_ACCOUNT_ID = "getOwnersAdvertiserAccountId";
     const METHOD_GET_OWNERS_AFFILIATE_ACCOUNT_ID = "getOwnersAffiliateAccountId";
     const METHOD_GET_PAYMENT_METHODS = "getPaymentMethods";
+    const METHOD_GET_PAYOUTS = "getPayouts";
     const METHOD_GET_REFERRAL_AFFILIATE_IDS = "getReferralAffiliateIds";
     const METHOD_GET_REFERRAL_COMMISSION = "getReferralCommission";
     const METHOD_GET_REFERRING_AFFILIATE = "getReferringAffiliate";
+    const METHOD_GET_REVENUES = "getRevenues";
     const METHOD_GET_SIGNUP_ANSWERS = "getSignupAnswers";
     const METHOD_GET_SIGNUP_QUESTIONS = "getSignupQuestions";
     const METHOD_GET_TARGET_COUNTRIES = "getTargetCountries";
@@ -177,6 +180,7 @@ abstract class HasOffersConstants
     const METHOD_REMOVE_CUSTOM_REFERRAL_COMMISSION = "removeCustomReferralCommission";
     const METHOD_REMOVE_INVOICE_ITEM = "removeInvoiceItem";
     const METHOD_RESET_PASSWORD = "resetPassword";
+    const METHOD_SET_AFFILIATE_APPROVAL = "setAffiliateApproval";
     const METHOD_SET_CREATIVE_CUSTOM_WEIGHTS = "setCreativeCustomWeights";
     const METHOD_SET_CREATIVE_WEIGHTS = "setCreativeWeights";
     const METHOD_SET_CUSTOM_COMMISSION = "setCustomCommission";
@@ -217,6 +221,7 @@ abstract class HasOffersConstants
     const PAYOUT_TYPE_CPM = "cpm";
 
     const STATUS_ACTIVE = "active";
+    const STATUS_APPROVED = "approved";
     const STATUS_DELETED = "deleted";
     const STATUS_PAUSED = "paused";
 
