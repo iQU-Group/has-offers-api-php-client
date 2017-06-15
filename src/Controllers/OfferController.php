@@ -29,7 +29,8 @@ class OfferController extends BaseController
         array $contain = array(),
         $limit = HasOffersConstants::DEFAULT_LIMIT,
         $page = HasOffersConstants::DEFAULT_PAGE_NUMBER
-    ) {
+    )
+    {
         $arguments = array(
             HasOffersConstants::URL_PARAM_FILTERS => $filters,
             HasOffersConstants::URL_PARAM_SORT => $sort,
@@ -77,7 +78,8 @@ class OfferController extends BaseController
         $filters = array(),
         $limit = HasOffersConstants::DEFAULT_LIMIT,
         $page = HasOffersConstants::DEFAULT_PAGE_NUMBER
-    ) {
+    )
+    {
         $arguments = array(
             HasOffersConstants::URL_PARAM_FILTERS => $filters,
             HasOffersConstants::URL_PARAM_PAGE => $page,
@@ -103,6 +105,138 @@ class OfferController extends BaseController
             HasOffersConstants::URL_PARAM_CONTAIN => $contain
         );
         return $this->sendGetRequest(HasOffersConstants::TARGET_OFFER, HasOffersConstants::METHOD_FIND_BY_ID,
+            $arguments);
+    }
+
+    /**
+     * Returns the affiliate offer approval notes for a given offer and affiliate.
+     * This method refers to the approval_notes property in the AffiliateOffer model.
+     *
+     * @param $id
+     * @param $affiliateId
+     * @return \Iqu\HasOffersAPIClient\HasOffersResponse
+     */
+    public function getAffiliateApplicationNote($id, $affiliateId)
+    {
+        $arguments = array(
+            HasOffersConstants::LITERAL_ID => $id,
+            HasOffersConstants::LITERAL_AFFILIATE_ID => $affiliateId
+        );
+        return $this->sendGetRequest(HasOffersConstants::TARGET_OFFER, HasOffersConstants::METHOD_GET_AFFILIATE_APPLICATION_NOTE,
+            $arguments);
+    }
+
+    /**
+     * Returns an affiliate's approval status for a given offer.
+     *
+     * @param $id
+     * @param $affiliateId
+     * @return \Iqu\HasOffersAPIClient\HasOffersResponse
+     */
+    public function getAffiliateApprovalStatus($id, $affiliateId)
+    {
+        $arguments = array(
+            HasOffersConstants::LITERAL_ID => $id,
+            HasOffersConstants::LITERAL_AFFILIATE_ID => $affiliateId
+        );
+        return $this->sendGetRequest(HasOffersConstants::TARGET_OFFER, HasOffersConstants::METHOD_GET_AFFILIATE_APPROVAL_STATUS,
+            $arguments);
+    }
+
+    /**
+     * Returns affiliate-specific custom tracking information for a given offer.
+     *
+     * @param $id
+     * @param $status
+     * @return \Iqu\HasOffersAPIClient\HasOffersResponse
+     */
+    public function getAffiliateHostnames($id, $status = '')
+    {
+        $arguments = array(
+            HasOffersConstants::LITERAL_ID => $id,
+            HasOffersConstants::LITERAL_STATUS => $status
+        );
+        return $this->sendGetRequest(HasOffersConstants::TARGET_OFFER, HasOffersConstants::METHOD_GET_AFFILIATE_HOST_NAMES,
+            $arguments);
+    }
+
+    /**
+     * Returns a summary of payout- and revenue-related information for a given affiliate and offer. Filter further by supplying a goal.
+     *
+     * @param $offerId
+     * @param $affiliateId
+     * @param $goalId
+     * @return \Iqu\HasOffersAPIClient\HasOffersResponse
+     */
+    public function getAffiliatePayment($offerId, $affiliateId, $goalId = '')
+    {
+        $arguments = array(
+            HasOffersConstants::LITERAL_OFFER_ID => $offerId,
+            HasOffersConstants::LITERAL_AFFILIATE_ID => $affiliateId
+        );
+        if ($goalId) {
+            $arguments[HasOffersConstants::LITERAL_GOAL_ID] = $goalId;
+        }
+        return $this->sendGetRequest(HasOffersConstants::TARGET_OFFER, HasOffersConstants::METHOD_GET_AFFILIATE_PAYMENT,
+            $arguments);
+    }
+
+    /**
+     * Returns payout information for a given offer, affiliate, and (optionally) goal.
+     *
+     * @param $offerId
+     * @param $affiliateId
+     * @param $goalId
+     * @return \Iqu\HasOffersAPIClient\HasOffersResponse
+     */
+    public function getAffiliatePayout($offerId, $affiliateId, $goalId = '')
+    {
+        $arguments = array(
+            HasOffersConstants::LITERAL_OFFER_ID => $offerId,
+            HasOffersConstants::LITERAL_AFFILIATE_ID => $affiliateId
+        );
+        if ($goalId) {
+            $arguments[HasOffersConstants::LITERAL_GOAL_ID] = $goalId;
+        }
+        return $this->sendGetRequest(HasOffersConstants::TARGET_OFFER, HasOffersConstants::METHOD_GET_AFFILIATE_PAYOUT,
+            $arguments);
+    }
+
+    /**
+     * Returns revenue information for a given offer, affiliate, and (optionally) goal.
+     *
+     * @param $offerId
+     * @param $affiliateId
+     * @param $goalId
+     * @return \Iqu\HasOffersAPIClient\HasOffersResponse
+     */
+    public function getAffiliateRevenue($offerId, $affiliateId, $goalId = '')
+    {
+        $arguments = array(
+            HasOffersConstants::LITERAL_OFFER_ID => $offerId,
+            HasOffersConstants::LITERAL_AFFILIATE_ID => $affiliateId
+        );
+        if ($goalId) {
+            $arguments[HasOffersConstants::LITERAL_GOAL_ID] = $goalId;
+        }
+        return $this->sendGetRequest(HasOffersConstants::TARGET_OFFER, HasOffersConstants::METHOD_GET_AFFILIATE_REVENUE,
+            $arguments);
+    }
+
+    /**
+     * Returns all answers an affiliate provided for a given offer's approval questions.
+     *
+     * @param $offerId
+     * @param $affiliateId
+     * @return \Iqu\HasOffersAPIClient\HasOffersResponse
+     */
+    public function getApprovalAnswers($offerId, $affiliateId)
+    {
+        $arguments = array(
+            HasOffersConstants::LITERAL_OFFER_ID => $offerId,
+            HasOffersConstants::LITERAL_AFFILIATE_ID => $affiliateId
+        );
+        return $this->sendGetRequest(HasOffersConstants::TARGET_OFFER, HasOffersConstants::METHOD_GET_APPROVAL_ANSWERS,
             $arguments);
     }
 

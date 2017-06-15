@@ -19,6 +19,42 @@ class BaseController
         $this->client = $client;
     }
 
+    /**
+     * Find All.
+     *
+     * @param $target
+     * @param array $filters
+     * @param array $sort
+     * @param array $fields
+     * @param array $contain
+     * @param string $limit
+     * @param string $page
+     * @return \Iqu\HasOffersAPIClient\HasOffersResponse
+     */
+    public function findAll(
+        $target,
+        $filters = array(),
+        $sort = array(),
+        array $fields = array(),
+        array $contain = array(),
+        $limit = HasOffersConstants::DEFAULT_LIMIT,
+        $page = HasOffersConstants::DEFAULT_PAGE_NUMBER
+    ) {
+        $arguments = array(
+            HasOffersConstants::URL_PARAM_FILTERS => $filters,
+            HasOffersConstants::URL_PARAM_SORT => $sort,
+            HasOffersConstants::URL_PARAM_FIELDS => $fields,
+            HasOffersConstants::URL_PARAM_CONTAIN => $contain
+        );
+        if ($limit != HasOffersConstants::DEFAULT_LIMIT) {
+            $arguments[HasOffersConstants::URL_PARAM_LIMIT] = $limit;
+        }
+        if ($page != HasOffersConstants::DEFAULT_PAGE_NUMBER) {
+            $arguments[HasOffersConstants::URL_PARAM_PAGE] = $page;
+        }
+        return $this->sendGetRequest($target, HasOffersConstants::METHOD_FIND_ALL, $arguments);
+    }
+
     public function sendGetRequest($target, $method, array $options = array())
     {
         $response = $this->client->get($this->buildUrl($target, $method, $options));
