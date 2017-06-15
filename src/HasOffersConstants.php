@@ -97,6 +97,7 @@ abstract class HasOffersConstants
     const METHOD_CREATE_RECEIPT = "createReceipt";
     const METHOD_CREATE_SIGNUP_QUESTION = "createSignupQuestion";
     const METHOD_CREATE_SIGNUP_QUESTION_ANSWER = "createSignupQuestionAnswer";
+    const METHOD_DELETE = "delete";
     const METHOD_DISABLE_FRAUD_ALERT = "disableFraudAlert";
     const METHOD_ENABLE_FRAUD_ALERT = "enableFraudAlert";
 
@@ -140,7 +141,15 @@ abstract class HasOffersConstants
     const METHOD_GET_ACCOUNT_MANAGER = "getAccountManager";
     const METHOD_GET_ACCOUNT_NOTES = "getAccountNotes";
     const METHOD_GET_ACTIVE_NETWORK_CAMPAIGN_COUNT = "getActiveNetworkCampaignCount";
+    const METHOD_GET_AFFILIATE_APPLICATION_NOTE = "getAffiliateApplicationNote";
+    const METHOD_GET_AFFILIATE_APPROVAL_STATUS = "getAffiliateApprovalStatus";
+    const METHOD_GET_AFFILIATE_HOST_NAMES = "getAffiliateHostnames";
+    const METHOD_GET_AFFILIATE_PAYMENT = "getAffiliatePayment";
+    const METHOD_GET_AFFILIATE_PAYOUT = "getAffiliatePayout";
+    const METHOD_GET_AFFILIATE_REVENUE = "getAffiliateRevenue";
     const METHOD_GET_AFFILIATE_TIER = "getAffiliateTier";
+    const METHOD_GET_ALLOWED_TYPES = "getAllowedTypes";
+    const METHOD_GET_APPROVAL_ANSWERS = "getApprovalAnswers";
     const METHOD_GET_APPROVED_OFFER_IDS = "getApprovedOfferIds";
     const METHOD_GET_BLOCKED_AFFILIATE_IDS = "getBlockedAffiliateIds";
     const METHOD_GET_BLOCKED_OFFER_IDS = "getBlockedOfferIds";
@@ -236,6 +245,8 @@ abstract class HasOffersConstants
     const TARGET_APPLICATION = "Application";
     const TARGET_EMPLOYEE = "Employee";
     const TARGET_OFFER = "Offer";
+    const TARGET_OFFER_PIXEL = "OfferPixel";
+    const TARGET_VAT_RATE = "VatRate";
     const TYPE_ADJUSTMENT = "adjustment";
     const TYPE_STATS = "stats";
     const TYPE_VAT = "vat";

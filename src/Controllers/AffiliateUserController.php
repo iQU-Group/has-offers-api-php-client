@@ -59,16 +59,7 @@ class AffiliateUserController extends BaseController
         $limit = HasOffersConstants::DEFAULT_LIMIT,
         $page = HasOffersConstants::DEFAULT_PAGE_NUMBER
     ) {
-        $arguments = array(
-            HasOffersConstants::URL_PARAM_FILTERS => $filters,
-            HasOffersConstants::URL_PARAM_SORT => $sort,
-            HasOffersConstants::URL_PARAM_FIELDS => $fields,
-            HasOffersConstants::URL_PARAM_CONTAIN => $contain,
-            HasOffersConstants::URL_PARAM_LIMIT => $limit,
-            HasOffersConstants::URL_PARAM_PAGE => $page
-        );
-        return $this->sendGetRequest(HasOffersConstants::TARGET_AFFILIATE_USER, HasOffersConstants::METHOD_FIND_ALL,
-            $arguments);
+        return parent::findAll(HasOffersConstants::TARGET_AFFILIATE_USER, $filters, $sort, $fields, $contain, $limit, $page);
     }
 
     /**

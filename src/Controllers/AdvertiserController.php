@@ -130,20 +130,7 @@ class AdvertiserController extends BaseController
         $limit = HasOffersConstants::DEFAULT_LIMIT,
         $page = HasOffersConstants::DEFAULT_PAGE_NUMBER
     ) {
-        $arguments = array(
-            HasOffersConstants::URL_PARAM_FILTERS => $filters,
-            HasOffersConstants::URL_PARAM_SORT => $sort,
-            HasOffersConstants::URL_PARAM_FIELDS => $fields,
-            HasOffersConstants::URL_PARAM_CONTAIN => $contain
-        );
-        if ($limit != HasOffersConstants::DEFAULT_LIMIT) {
-            $arguments[HasOffersConstants::URL_PARAM_LIMIT] = $limit;
-        }
-        if ($page != HasOffersConstants::DEFAULT_PAGE_NUMBER) {
-            $arguments[HasOffersConstants::URL_PARAM_PAGE] = $page;
-        }
-        return $this->sendGetRequest(HasOffersConstants::TARGET_ADVERTISER, HasOffersConstants::METHOD_FIND_ALL,
-            $arguments);
+        return parent::findAll(HasOffersConstants::TARGET_ADVERTISER, $filters, $sort, $fields, $contain, $limit, $page);
     }
 
     /**
