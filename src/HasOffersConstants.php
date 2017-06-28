@@ -150,6 +150,7 @@ abstract class HasOffersConstants
     const METHOD_GET_AFFILIATE_TIER = "getAffiliateTier";
     const METHOD_GET_ALLOWED_TYPES = "getAllowedTypes";
     const METHOD_GET_APPROVAL_ANSWERS = "getApprovalAnswers";
+    const METHOD_GET_APPROVED_AFFILIATE_IDS = "getApprovedAffiliateIds";
     const METHOD_GET_APPROVED_OFFER_IDS = "getApprovedOfferIds";
     const METHOD_GET_BLOCKED_AFFILIATE_IDS = "getBlockedAffiliateIds";
     const METHOD_GET_BLOCKED_OFFER_IDS = "getBlockedOfferIds";
@@ -177,6 +178,7 @@ abstract class HasOffersConstants
     const METHOD_GET_REVENUES = "getRevenues";
     const METHOD_GET_SIGNUP_ANSWERS = "getSignupAnswers";
     const METHOD_GET_SIGNUP_QUESTIONS = "getSignupQuestions";
+    const METHOD_GET_STATS = "getStats";
     const METHOD_GET_TARGET_COUNTRIES = "getTargetCountries";
     const METHOD_GET_UNAPPROVED_OFFER_IDS = "getUnapprovedOfferIds";
     const METHOD_GET_UNBLOCKED_AFFILIATE_IDS = "getUnblockedAffiliateIds";
@@ -246,19 +248,26 @@ abstract class HasOffersConstants
     const TARGET_EMPLOYEE = "Employee";
     const TARGET_OFFER = "Offer";
     const TARGET_OFFER_PIXEL = "OfferPixel";
+    const TARGET_REPORT = "Report";
     const TARGET_VAT_RATE = "VatRate";
     const TYPE_ADJUSTMENT = "adjustment";
     const TYPE_STATS = "stats";
     const TYPE_VAT = "vat";
 
     const URL_PARAM_CONTAIN = "contain";
+    const URL_PARAM_CURRENCY = "currency";
+    const URL_PARAM_DATA_END = "data_end";
+    const URL_PARAM_DATA_START = "data_start";
     const URL_PARAM_FIELDS = "fields";
     const URL_PARAM_FILTERS = "filters";
+    const URL_PARAM_GROUPS = "groups";
+    const URL_PARAM_HOUR_OFFSET = "hour_offset";
     const URL_PARAM_LIMIT = "limit";
     const URL_PARAM_METHOD = "Method";
     const URL_PARAM_PAGE = "page";
     const URL_PARAM_SORT = "sort";
     const URL_PARAM_TARGET = "Target";
+    const URL_PARAM_TOTALS = "totals";
 
     const VAT_ID_EU = 2;
     const VAT_ID_NL = 1;
