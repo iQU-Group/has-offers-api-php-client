@@ -29,8 +29,7 @@ class OfferController extends BaseController
         array $contain = array(),
         $limit = HasOffersConstants::DEFAULT_LIMIT,
         $page = HasOffersConstants::DEFAULT_PAGE_NUMBER
-    )
-    {
+    ) {
         $arguments = array(
             HasOffersConstants::URL_PARAM_FILTERS => $filters,
             HasOffersConstants::URL_PARAM_SORT => $sort,
@@ -78,8 +77,7 @@ class OfferController extends BaseController
         $filters = array(),
         $limit = HasOffersConstants::DEFAULT_LIMIT,
         $page = HasOffersConstants::DEFAULT_PAGE_NUMBER
-    )
-    {
+    ) {
         $arguments = array(
             HasOffersConstants::URL_PARAM_FILTERS => $filters,
             HasOffersConstants::URL_PARAM_PAGE => $page,
@@ -122,7 +120,8 @@ class OfferController extends BaseController
             HasOffersConstants::LITERAL_ID => $id,
             HasOffersConstants::LITERAL_AFFILIATE_ID => $affiliateId
         );
-        return $this->sendGetRequest(HasOffersConstants::TARGET_OFFER, HasOffersConstants::METHOD_GET_AFFILIATE_APPLICATION_NOTE,
+        return $this->sendGetRequest(HasOffersConstants::TARGET_OFFER,
+            HasOffersConstants::METHOD_GET_AFFILIATE_APPLICATION_NOTE,
             $arguments);
     }
 
@@ -139,7 +138,8 @@ class OfferController extends BaseController
             HasOffersConstants::LITERAL_ID => $id,
             HasOffersConstants::LITERAL_AFFILIATE_ID => $affiliateId
         );
-        return $this->sendGetRequest(HasOffersConstants::TARGET_OFFER, HasOffersConstants::METHOD_GET_AFFILIATE_APPROVAL_STATUS,
+        return $this->sendGetRequest(HasOffersConstants::TARGET_OFFER,
+            HasOffersConstants::METHOD_GET_AFFILIATE_APPROVAL_STATUS,
             $arguments);
     }
 
@@ -156,7 +156,8 @@ class OfferController extends BaseController
             HasOffersConstants::LITERAL_ID => $id,
             HasOffersConstants::LITERAL_STATUS => $status
         );
-        return $this->sendGetRequest(HasOffersConstants::TARGET_OFFER, HasOffersConstants::METHOD_GET_AFFILIATE_HOST_NAMES,
+        return $this->sendGetRequest(HasOffersConstants::TARGET_OFFER,
+            HasOffersConstants::METHOD_GET_AFFILIATE_HOST_NAMES,
             $arguments);
     }
 
@@ -238,6 +239,28 @@ class OfferController extends BaseController
         );
         return $this->sendGetRequest(HasOffersConstants::TARGET_OFFER, HasOffersConstants::METHOD_GET_APPROVAL_ANSWERS,
             $arguments);
+    }
+
+    /**
+     * Returns IDs of all affiliates approved for a given offer.
+     *
+     * If the offer is private or requires approval, this method returns affiliates who are approved for this offer.
+     * If the offer is public, this method returns all affiliates except those who have been blocked from this offer.     *
+     *
+     * @param $id
+     * @param array $sort
+     * @return \Iqu\HasOffersAPIClient\HasOffersResponse
+     */
+    public function getApprovedAffiliateIds($id, $sort = array())
+    {
+        $arguments = array(
+            HasOffersConstants::LITERAL_ID => $id,
+        );
+        if (count($sort)) {
+            $arguments[HasOffersConstants::LITERAL_SORT] = $sort;
+        }
+        return $this->sendGetRequest(HasOffersConstants::TARGET_OFFER,
+            HasOffersConstants::METHOD_GET_APPROVED_AFFILIATE_IDS, $arguments);
     }
 
     /**
