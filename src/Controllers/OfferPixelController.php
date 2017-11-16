@@ -48,7 +48,7 @@ class OfferPixelController extends BaseController
         $page = HasOffersConstants::DEFAULT_PAGE_NUMBER
     )
     {
-        return parent::findAll(HasOffersConstants::TARGET_OFFER_PIXEL, $filters, $sort, $fields, $contain, $limit, $page);
+        return parent::findAllByTarget(HasOffersConstants::TARGET_OFFER_PIXEL, $filters, $sort, $fields, $contain, $limit, $page);
     }
 
     /**

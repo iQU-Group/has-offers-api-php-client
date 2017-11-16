@@ -130,7 +130,7 @@ class AdvertiserController extends BaseController
         $limit = HasOffersConstants::DEFAULT_LIMIT,
         $page = HasOffersConstants::DEFAULT_PAGE_NUMBER
     ) {
-        return parent::findAll(HasOffersConstants::TARGET_ADVERTISER, $filters, $sort, $fields, $contain, $limit, $page);
+        return parent::findAllByTarget(HasOffersConstants::TARGET_ADVERTISER, $filters, $sort, $fields, $contain, $limit, $page);
     }
 
     /**

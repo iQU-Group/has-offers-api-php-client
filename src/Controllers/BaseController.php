@@ -31,7 +31,7 @@ class BaseController
      * @param string $page
      * @return \Iqu\HasOffersAPIClient\HasOffersResponse
      */
-    public function findAll(
+    public function findAllByTarget(
         $target,
         $filters = array(),
         $sort = array(),

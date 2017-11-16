@@ -63,7 +63,7 @@ class VatRateController extends BaseController
         $page = HasOffersConstants::DEFAULT_PAGE_NUMBER
     )
     {
-        return parent::findAll(HasOffersConstants::TARGET_VAT_RATE, $filters, $sort, $fields, $contain, $limit, $page);
+        return parent::findAllByTarget(HasOffersConstants::TARGET_VAT_RATE, $filters, $sort, $fields, $contain, $limit, $page);
     }
 
     /**
