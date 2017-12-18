@@ -245,6 +245,7 @@ abstract class HasOffersConstants
     const TARGET_AFFILIATE_BILLING = "AffiliateBilling";
     const TARGET_AFFILIATE_USER = "AffiliateUser";
     const TARGET_APPLICATION = "Application";
+    const TARGET_CONVERSION = "Conversion";
     const TARGET_EMPLOYEE = "Employee";
     const TARGET_OFFER = "Offer";
     const TARGET_OFFER_PIXEL = "OfferPixel";
