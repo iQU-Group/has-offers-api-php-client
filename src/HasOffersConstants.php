@@ -61,6 +61,7 @@ abstract class HasOffersConstants
     const LITERAL_NETWORK_TOKEN = "NetworkToken";
     const LITERAL_NOTE = "note";
     const LITERAL_NOTES = "notes";
+    const LITERAL_NUMBER = "number";
     const LITERAL_PARAMS = "params";
     const LITERAL_OFFER_ID = "offer_id";
     const LITERAL_OPTIONS = "options";
@@ -222,6 +223,7 @@ abstract class HasOffersConstants
     const METHOD_UPDATE_RECEIPT_FIELD = "'updateReceiptField";
     const METHOD_UPDATE_SIGNUP_QUESTION = "updateSignupQuestion";
     const METHOD_UPDATE_SIGNUP_QUESTION_ANSWER = "updateSignupQuestionAnswer";
+    const METHOD_UPDATE_STATUS = "updateStatus";
     const METHOD_UPDATE_TAX_INFO = "updateTaxInfo";
 
     const PAYOUT_TYPE_AMOUNT = "amount";
@@ -235,6 +237,7 @@ abstract class HasOffersConstants
     const STATUS_APPROVED = "approved";
     const STATUS_DELETED = "deleted";
     const STATUS_PAUSED = "paused";
+    const STATUS_REJECTED = "rejected";
 
     const TARGET_ACCOUNT_MANAGER = "AccountManager";
     const TARGET_AD_MANAGER = "AdManager";
